@@ -9,8 +9,7 @@ on:
 env:
   SERVER_HOST: 95.163.236.53
   SERVER_USER: root
-  SERVER_PATH_BACKEND: /app/github-actions-practice/backend
-  SERVER_PATH_FRONTEND: /app/github-actions-practice/frontend
+  SERVER_PATH: /app/github-actions-practice
 
 jobs:
   deploy:
@@ -29,7 +28,7 @@ jobs:
         run: ssh-keyscan -H ${{ env.SERVER_HOST }} >> ~/.ssh/known_hosts
       - 
         name: Deploy backend
-        run: rsync --archive --compress --progress --delete ${{ github.workspace }}/backend ${{ env.SERVER_USER }}@${{ env.SERVER_HOST }}:${{ env.SERVER_PATH_BACKEND }}
+        run: rsync --archive --compress --progress --delete ${{ github.workspace }}/backend ${{ env.SERVER_USER }}@${{ env.SERVER_HOST }}:${{ env.SERVER_PATH }}
       - 
         name: Deploy frontend
-        run: rsync --archive --compress --progress --delete ${{ github.workspace }}/frontend ${{ env.SERVER_USER }}@${{ env.SERVER_HOST }}:${{ env.SERVER_PATH_FRONTEND }}
+        run: rsync --archive --compress --progress --delete ${{ github.workspace }}/frontend ${{ env.SERVER_USER }}@${{ env.SERVER_HOST }}:${{ env.SERVER_PATH }}
