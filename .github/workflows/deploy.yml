@@ -28,7 +28,7 @@ jobs:
         run: ssh-keyscan -H ${{ env.SERVER_HOST }} >> ~/.ssh/known_hosts
       - 
         name: Deploy backend
-        run: rsync --archive --compress --progress --delete ${{ github.workspace }}/backend ${{ env.SERVER_USER }}@${{ env.SERVER_HOST }}:${{ env.SERVER_PATH }}
+        run: rsync --archive --compress --progress ${{ github.workspace }}/backend ${{ env.SERVER_USER }}@${{ env.SERVER_HOST }}:${{ env.SERVER_PATH }}
       - 
         name: Deploy frontend
-        run: rsync --archive --compress --progress --delete ${{ github.workspace }}/frontend ${{ env.SERVER_USER }}@${{ env.SERVER_HOST }}:${{ env.SERVER_PATH }}
+        run: rsync --archive --compress --progress ${{ github.workspace }}/frontend ${{ env.SERVER_USER }}@${{ env.SERVER_HOST }}:${{ env.SERVER_PATH }}
