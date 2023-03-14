@@ -5,7 +5,7 @@ import axios from 'axios'
 
 function App() {
 
-  const url = "http://127.0.0.1:8000/";
+  const url = "http://localhost:8000/";
 
   const [datas, setDatas] = useState([]);
 
