@@ -6,10 +6,10 @@ on:
       - main
 
 env:
-  - SERVER_HOST: 95.163.236.53
-  - SERVER_USER: root
-  - SERVER_PATH_BACKEND: /app/github-actions-practice/backend
-  - SERVER_PATH_FRONTEND: /app/github-actions-practice/frontend
+  SERVER_HOST: 95.163.236.53
+  SERVER_USER: root
+  SERVER_PATH_BACKEND: /app/github-actions-practice/backend
+  SERVER_PATH_FRONTEND: /app/github-actions-practice/frontend
 
 jobs:
   deploy:
