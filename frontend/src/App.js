@@ -1,15 +1,11 @@
 import React, { useState, useEffect } from 'react';
 
 import './App.css';
-import axios from 'axios'
-
-const dotenv = require('dotenv');
+import axios from 'axios';
 
 function App() {
 
-  const env = dotenv.config().parsed;
-
-  const url = env[PROD_URL] || "http://127.0.0.1:8000/";
+  const url = process.env.PROD_URL || "http://127.0.0.1:8000/";
 
   const [datas, setDatas] = useState([]);
 
