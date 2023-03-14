@@ -5,7 +5,7 @@ import axios from 'axios';
 
 function App() {
 
-  const url = process.env.PROD_URL;
+  const url = process.env.REACT_APP_PROD_URL || "http://127.0.0.1:8000/";
 
   const [datas, setDatas] = useState([]);
 
