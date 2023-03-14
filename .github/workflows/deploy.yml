@@ -26,6 +26,7 @@ jobs:
       - 
         name: Generate auth hosts
         run: ssh-keyscan -H ${{ env.SERVER_HOST }} >> ~/.ssh/known_hosts
+      - run: pwd && ls -lah
       - 
         name: Deploy backend
         run: rsync --archive --compress --progress --delete ./backend ${{ env.SERVER_USER }}@${{ env.SERVER_HOST }}:${{ env.SERVER_PATH_BACKEND }}
